@@ -1,0 +1,39 @@
+logging {
+    channel queries_log {
+        file "/var/log/named/queries.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+    };
+
+    channel transfers_log {
+        file "/var/log/named/transfers.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+    };
+
+    channel security_log {
+        file "/var/log/named/security.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+    };
+
+    category queries {
+        queries_log;
+    };
+
+    category xfer-in {
+        transfers_log;
+    };
+
+    category xfer-out {
+        transfers_log;
+    };
+
+    category notify {
+        transfers_log;
+    };
+
+    category security {
+        security_log;
+    };
+};

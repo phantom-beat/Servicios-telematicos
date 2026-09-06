@@ -1,0 +1,32 @@
+$TTL 86400
+@   IN  SOA maestro.empresa.local. admin.empresa.local. (
+        2026090602
+        3600
+        900
+        604800
+        86400
+)
+
+@       IN  NS      maestro.empresa.local.
+@       IN  NS      esclavo.empresa.local.
+
+maestro IN  A       192.168.50.2
+esclavo IN  A       192.168.50.3
+
+ns1     IN  A       192.168.50.2
+ns2     IN  A       192.168.50.3
+
+www     IN  A       192.168.50.10
+www     IN  AAAA    2001:db8:50::10
+
+api     IN  A       192.168.50.30
+
+mail    IN  A       192.168.50.20
+mail    IN  AAAA    2001:db8:50::20
+
+ns1     IN  AAAA    2001:db8:50::2
+ns2     IN  AAAA    2001:db8:50::3
+
+ftp     IN  CNAME   www.empresa.local.
+
+@       IN  MX 10   mail.empresa.local.

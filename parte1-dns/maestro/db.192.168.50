@@ -1,0 +1,16 @@
+$TTL 86400
+@   IN  SOA maestro.empresa.local. admin.empresa.local. (
+        2026090601
+        3600
+        900
+        604800
+        86400
+)
+
+@       IN  NS      maestro.empresa.local.
+@       IN  NS      esclavo.empresa.local.
+
+2       IN  PTR     maestro.empresa.local.
+3       IN  PTR     esclavo.empresa.local.
+10      IN  PTR     www.empresa.local.
+20      IN  PTR     mail.empresa.local.

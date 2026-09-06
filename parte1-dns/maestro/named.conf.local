@@ -1,0 +1,21 @@
+include "/etc/bind/keys/esclavo.key";
+
+zone "empresa.local" {
+    type master;
+    file "/etc/bind/db.empresa.local";
+
+    notify yes;
+    also-notify { 192.168.50.3; };
+
+    allow-transfer { key "esclavo"; };
+};
+
+zone "50.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.192.168.50";
+
+    notify yes;
+    also-notify { 192.168.50.3; };
+
+    allow-transfer { key "esclavo"; };
+};
